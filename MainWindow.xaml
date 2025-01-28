@@ -1,0 +1,41 @@
+﻿<Window x:Class="KajakKenuWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KajakKenuWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="Kolcsonzesek_Grid" Margin="14,20,14,217" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nev" Binding="{Binding Nev}"/>
+                <DataGridTextColumn Header="Hajó Azonositó" Binding="{Binding Hajoid}"/>
+                <DataGridTextColumn Header="Hajó Típusa" Binding="{Binding Hajotipus}"/>
+                <DataGridTextColumn Header="Személyek száma" Binding="{Binding Szemelyekszama}"/>
+                <DataGridTextColumn Header="Elvitel Órája" Binding="{Binding Elvitelora}"/>
+                <DataGridTextColumn Header="Elvitel Perce" Binding="{Binding Elvitelperc}"/>
+                <DataGridTextColumn Header="Visszahozatal órája" Binding="{Binding Visszahozatalora}"/>
+                <DataGridTextColumn Header="Visszahozatal perce" Binding="{Binding Visszahozatalperc}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <ComboBox x:Name="Ora" HorizontalAlignment="Left" Margin="14,222,0,0" VerticalAlignment="Top" Width="74"/>
+        <ComboBox x:Name="Perc" HorizontalAlignment="Left" Margin="93,222,0,0" VerticalAlignment="Top" Width="74"/>
+
+        <Button x:Name="Kereses" Content="Kereses" HorizontalAlignment="Left" Margin="172,223,0,0" VerticalAlignment="Top" Width="75" Click="Kereses_Click"/>
+
+        <DataGrid x:Name="KeresesEredmeny" Margin="15,248,14,20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nev" Binding="{Binding Nev}"/>
+                <DataGridTextColumn Header="Hajó Azonositó" Binding="{Binding HajoAzonosito}"/>
+                <DataGridTextColumn Header="Hajó Típusa" Binding="{Binding HajoTipusa}"/>
+                <DataGridTextColumn Header="Személyek száma" Binding="{Binding SzemelyekSzama}"/>
+                <DataGridTextColumn Header="Elvitel Órája" Binding="{Binding ElvitelOra}"/>
+                <DataGridTextColumn Header="Elvitel Perce" Binding="{Binding ElvitelPerc}"/>
+                <DataGridTextColumn Header="Visszahozatal órája" Binding="{Binding VisszahozatalOra}"/>
+                <DataGridTextColumn Header="Visszahozatal perce" Binding="{Binding VisszahozatalPerc}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
