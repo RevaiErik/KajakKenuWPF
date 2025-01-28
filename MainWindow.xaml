@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KajakKenuWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="800">
     <Grid>
-        <DataGrid x:Name="Kolcsonzesek_Grid" Margin="14,20,14,217" ItemsSource="{Binding}" AutoGenerateColumns="False">
+        <DataGrid x:Name="Kolcsonzesek_Grid" Margin="14,20,14,770" ItemsSource="{Binding}" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nev" Binding="{Binding Nev}"/>
                 <DataGridTextColumn Header="Hajó Azonositó" Binding="{Binding Hajoid}"/>
@@ -25,17 +25,17 @@
 
         <Button x:Name="Kereses" Content="Kereses" HorizontalAlignment="Left" Margin="172,223,0,0" VerticalAlignment="Top" Width="75" Click="Kereses_Click"/>
 
-        <DataGrid x:Name="KeresesEredmeny" Margin="15,248,14,20">
+        <DataGrid x:Name="KeresesEredmeny" Margin="15,248,14,400" ItemsSource="{Binding}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nev" Binding="{Binding Nev}"/>
-                <DataGridTextColumn Header="Hajó Azonositó" Binding="{Binding HajoAzonosito}"/>
-                <DataGridTextColumn Header="Hajó Típusa" Binding="{Binding HajoTipusa}"/>
-                <DataGridTextColumn Header="Személyek száma" Binding="{Binding SzemelyekSzama}"/>
-                <DataGridTextColumn Header="Elvitel Órája" Binding="{Binding ElvitelOra}"/>
-                <DataGridTextColumn Header="Elvitel Perce" Binding="{Binding ElvitelPerc}"/>
-                <DataGridTextColumn Header="Visszahozatal órája" Binding="{Binding VisszahozatalOra}"/>
-                <DataGridTextColumn Header="Visszahozatal perce" Binding="{Binding VisszahozatalPerc}"/>
+             <DataGridTextColumn Header="Nev" Binding="{Binding Nev}"/>
+            <DataGridTextColumn Header="Hajó Típusa" Binding="{Binding Hajotipus}"/>
+            <DataGridTextColumn Header="Elvitel Órája" Binding="{Binding Elvitelora}"/>
+            <DataGridTextColumn Header="Elvitel Perce" Binding="{Binding Elvitelperc}"/>
+            <DataGridTextColumn Header="Visszahozatal órája" Binding="{Binding Visszahozatalora}"/>
+                <DataGridTextColumn Header="Visszahozatal perce" Binding="{Binding Visszahozatalperc}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Össz kölcsonzés" x:Name="OsszesKolcsonzes" HorizontalAlignment="Left" Margin="14,589,0,348" Click="OsszesKolcsonzes_Click"/>
+        <ListBox x:Name="Kolcsonzesek_Listbox" HorizontalAlignment="Left" Margin="15,641,0,192" Width="191"/>
     </Grid>
 </Window>
